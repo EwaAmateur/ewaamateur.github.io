@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova AI - De Toekomst van Assistentie</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigatiebalk -->
+    <header>
+        <div class="logo">Nova<span>AI</span></div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Functies</a></li>
+                <li><a href="#demo">Probeer Demo</a></li>
+            </ul>
+        </nav>
+        <button class="btn-main">Aanmelden</button>
+    </header>
+
+    <!-- Hero Sectie -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Ontdek de kracht van <br><span class="gradient-text">Kunstmatige Intelligentie</span></h1>
+            <p>Nova AI automatiseert je workflow, beantwoordt complexe vragen en denkt met je mee. Sneller, slimmer en volledig op maat.</p>
+            <div class="hero-buttons">
+                <a href="#demo" class="btn-main">Start Gratis Proefperiode</a>
+                <a href="#features" class="btn-sub">Lees Meer</a>
+            </div>
+        </div>
+        <div class="hero-graphic">
+            <div class="ai-orb"></div>
+        </div>
+    </section>
+
+    <!-- Demo / Interactieve Chat Sectie -->
+    <section id="demo" class="demo-section">
+        <h2>Praat met Nova</h2>
+        <p class="section-subtitle">Test live hoe snel onze AI reageert.</p>
+        
+        <div class="chat-container">
+            <div class="chat-box" id="chatBox">
+                <div class="message ai-message">Hallo! Ik ben Nova. Wat kan ik vandaag voor je doen?</div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" id="userInput" placeholder="Typ een bericht aan Nova..." autocomplete="off">
+                <button id="sendBtn">Verstuur</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
