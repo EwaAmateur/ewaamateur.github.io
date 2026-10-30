@@ -1,2 +1,2 @@
-# EwaAmateur.github.io
+# ewaamateur.github.io
 this is my website
