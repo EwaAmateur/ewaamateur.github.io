@@ -209,7 +209,7 @@
       const data = new FormData(this);
       const subject = encodeURIComponent(data.get('onderwerp') || 'Contact via Lemmens Horses');
       const body = encodeURIComponent('Naam: ' + data.get('naam') + '\nE-mail: ' + data.get('email') + '\n\n' + data.get('bericht'));
-      window.location.href = 'mailto:info@lemmenshorses.be?subject=' + subject + '&body=' + body;
+      window.location.href = 'mailto:info@lemmenshorses.trade?subject=' + subject + '&body=' + body;
     });
   </script>
 </body>
