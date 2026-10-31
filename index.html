@@ -1,90 +1,87 @@
+### Lemmens Horses – Officiële Website
+
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lemmens Horses | Dressuur & Paarden</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lemmens Horses | Opleiding Jonge Paarden & Dressuur op Maat</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  
+  <style>
+    .hero-bg {
+      background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), 
+                        url('https://images.unsplash.com/photo-1581553912006-9d3e9c5e3b3d?ixlib=rb-4.0.3&auto=format&fit=crop&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+    .nav-link {
+      transition: all 0.3s ease;
+    }
+    .nav-link:hover {
+      color: #b45309;
+      transform: translateY(-2px);
+    }
+    .horse-card {
+      transition: all 0.4s ease;
+    }
+    .horse-card:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.15);
+    }
+  </style>
 </head>
-<body>
+<body class="font-sans text-gray-800">
 
-    <!-- NAVIGATIE -->
-    <nav class="navbar">
-        <div class="logo">
-            <h2>Lemmens Horses</h2>
-            <span>Dressuur • Training • Paarden</span>
+  <!-- HERO -->
+  <header class="hero-bg text-white min-h-screen flex items-center relative">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h1 class="text-6xl md:text-7xl font-bold mb-3">Lemmens Horses</h1>
+      <p class="text-3xl md:text-4xl text-amber-200 font-light mb-10">Opleiding Jonge Paarden • Dressuur op Maat</p>
+      
+      <div class="flex flex-col sm:flex-row gap-5 justify-center">
+        <a href="#aanbod" class="bg-amber-700 hover:bg-amber-800 px-10 py-4 rounded-full text-lg font-semibold transition">
+          Ons Aanbod
+        </a>
+        <a href="#contact" class="border-2 border-white hover:bg-white hover:text-gray-900 px-10 py-4 rounded-full text-lg font-semibold transition">
+          Contacteer Ons
+        </a>
+      </div>
+
+      <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2">
+        <i class="fas fa-chevron-down text-4xl animate-bounce"></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- NAVIGATIE -->
+  <nav class="bg-white shadow-lg sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex justify-between items-center h-20">
+        <div class="flex items-center gap-3">
+          <i class="fas fa-horse text-4xl text-amber-700"></i>
+          <span class="text-3xl font-bold">Lemmens Horses</span>
         </div>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#lessen">Lessen</a></li>
-            <li><a href="#paarden">Paarden</a></li>
-            <li><a href="#alina">Alina</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="hamburger" id="hamburger">
-            <i class="fas fa-bars"></i>
+        <div class="hidden md:flex items-center gap-10 text-lg font-medium">
+          <a href="#jonge-paarden" class="nav-link">Jonge Paarden</a>
+          <a href="#dressuur-lessen" class="nav-link">Dressuur Lessen</a>
+          <a href="#aanbod" class="nav-link">Aanbod</a>
+          <a href="#over" class="nav-link">Over Ons</a>
+          <a href="#contact" class="nav-link">Contact</a>
         </div>
-    </nav>
+      </div>
+    </div>
+  </nav>
 
-    <!-- HERO -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Lemmens Horses</h1>
-            <p class="subtitle">Exclusieve dressuurtraining & kwalitatieve dressuurpaarden</p>
-            <p class="trainer">Trainer: <strong>Alina Lemmens</strong></p>
-            <a href="#contact" class="btn">Neem Contact Op</a>
-        </div>
-    </section>
+  <!-- AANBOD -->
+  <section id="aanbod" class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-5xl font-bold mb-4">Wat bieden wij aan?</h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          Professionele opleiding van jonge paarden en individuele dressuurlessen op maat, afgestemd op jouw doelen.
+        </p>
+      </div>
 
-    <!-- LESSEN -->
-    <section id="lessen" class="section">
-        <h2 class="section-title">Onze Lessen</h2>
-        <div class="cards">
-            <div class="card">
-                <i class="fas fa-user"></i>
-                <h3>Privéles</h3>
-                <p>Persoonlijke begeleiding op maat. Van basis tot Grand Prix.</p>
-                <span class="price">€70 per les (45 min)</span>
-            </div>
-            <div class="card">
-                <i class="fas fa-users"></i>
-                <h3>Groeples</h3>
-                <p>Max. 4 ruiters per les voor optimale aandacht.</p>
-                <span class="price">€45 per les</span>
-            </div>
-            <div class="card">
-                <i class="fas fa-horse"></i>
-                <h3>Paard in Training</h3>
-                <p>Professionele opleiding door Alina Lemmens.</p>
-                <span class="price">Vanaf €550/maand</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- PAARDEN TE KOOP -->
-    <section id="paarden" class="section bg-light">
-        <h2 class="section-title">Paarden te Koop</h2>
-        <div class="horse-grid" id="horseGrid"></div>
-    </section>
-
-    <!-- OVER ALINA -->
-    <section id="alina" class="section">
-        <div class="about-container">
-            <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1595433707819-1a6f7f0c9c5e?w=600" alt="Alina Lemmens">
-            </div>
-            <div class="about-text">
-                <h2>Alina Lemmens</h2>
-                <p class="tagline">Dressuuramazone & Trainer</p>
-                <p>Met meer dan 15 jaar ervaring in de dressuursport begeleid ik ruiters en paarden op een rustige, duidelijke en paardvriendelijke manier.</p>
-                <p>Specialisatie: B t/m ZZ en PSG. Ook beschikbaar voor intensieve trainingen en verkoopbegeleiding.</p>
-                <a href="#contact" class="btn">Plan een kennismaking</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section">
-        <h2 class
+      <div class="grid md:grid
