@@ -1,57 +1,148 @@
+Here's a complete, modern HTML5 Equestrian Dressage Website focused on Training and Selling Horses. Everything is in one file using only HTML, CSS, and JavaScript.
+
+```html
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nova AI - De Toekomst van Assistentie</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ÉCLAT Dressage | Training & Horse Sales</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #D4AF37;
+      --dark: #0F1C1E;
+      --cream: #F5F0E6;
+      --accent: #8B5E3C;
+    }
 
-    <!-- Navigatiebalk -->
-    <header>
-        <div class="logo">Nova<span>AI</span></div>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#features">Functies</a></li>
-                <li><a href="#demo">Probeer Demo</a></li>
-            </ul>
-        </nav>
-        <button class="btn-main">Aanmelden</button>
-    </header>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--dark);
+      color: var(--cream);
+      line-height: 1.6;
+    }
 
-    <!-- Hero Sectie -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Ontdek de kracht van <br><span class="gradient-text">Kunstmatige Intelligentie</span></h1>
-            <p>Nova AI automatiseert je workflow, beantwoordt complexe vragen en denkt met je mee. Sneller, slimmer en volledig op maat.</p>
-            <div class="hero-buttons">
-                <a href="#demo" class="btn-main">Start Gratis Proefperiode</a>
-                <a href="#features" class="btn-sub">Lees Meer</a>
-            </div>
-        </div>
-        <div class="hero-graphic">
-            <div class="ai-orb"></div>
-        </div>
-    </section>
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(15, 28, 30, 0.95);
+      backdrop-filter: blur(12px);
+      z-index: 1000;
+      border-bottom: 2px solid var(--gold);
+    }
 
-    <!-- Demo / Interactieve Chat Sectie -->
-    <section id="demo" class="demo-section">
-        <h2>Praat met Nova</h2>
-        <p class="section-subtitle">Test live hoe snel onze AI reageert.</p>
-        
-        <div class="chat-container">
-            <div class="chat-box" id="chatBox">
-                <div class="message ai-message">Hallo! Ik ben Nova. Wat kan ik vandaag voor je doen?</div>
-            </div>
-            <div class="chat-input-area">
-                <input type="text" id="userInput" placeholder="Typ een bericht aan Nova..." autocomplete="off">
-                <button id="sendBtn">Verstuur</button>
-            </div>
-        </div>
-    </section>
+    nav {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 1.4rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-    <script src="script.js"></script>
-</body>
-</html>
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: var(--gold);
+      letter-spacing: 3px;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+    }
+
+    .nav-links a {
+      color: var(--cream);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    /* Hero */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(rgba(15,28,30,0.75), rgba(15,28,30,0.8)), 
+                  url('https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?ixlib=rb-4.0.3&auto=format&fit=crop&q=85') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .hero-content h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 5.5rem;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .hero-content p {
+      font-size: 1.6rem;
+      max-width: 700px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .btn {
+      padding: 16px 48px;
+      border: 2px solid var(--gold);
+      color: var(--gold);
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.4s;
+    }
+
+    .btn:hover {
+      background: var(--gold);
+      color: var(--dark);
+      transform: translateY(-4px);
+    }
+
+    section {
+      padding: 100px 5%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.4rem;
+      text-align: center;
+      margin-bottom: 3rem;
+      color: var(--gold);
+    }
+
+    /* Training Section */
+    .training {
+      background: var(--cream);
+      color: var(--dark);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: transform 0.4s;
+    }
+
+    .card:hover {
+      transform: translateY(-15px);
+    }
+
+    .card img {
