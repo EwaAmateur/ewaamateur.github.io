@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
   <meta name="description" content="Lemmens Horses — training, opleiding en verkoop van kwaliteitsvolle dressuurpaarden.">
   <title>Lemmens Horses | Dressuur, training & verkoop</title>
   <style>
@@ -31,7 +31,7 @@
     h1 { font: 400 clamp(48px, 7vw, 88px)/1.02 Georgia, serif; margin: 24px 0; }
     h1 em { color: #d9c7a7; font-weight: 400; }
     .hero p { max-width: 470px; color: #eeeae2; font: 17px/1.8 Georgia, serif; }
-    .button { display: inline-block; margin-top: 28px; padding: 16px 25px; background: var(--sand); color: #24251f; text-transform: uppercase; letter-spacing: 1.8px; font-size: 10px; font-weight: bold; transition: .2s; }
+    .button { display: inline-block; margin-top: 28px; padding: 16px 25px; background: var(--sand); color: #24251f; text-transform: uppercase; letter-spacing: 1.8px; font-size: 10px; font-weight: bold; transition: .2s; border: 0; cursor: pointer; }
     .button:hover { background: white; transform: translateY(-2px); }
     .section { padding: 105px 8%; }
     .intro { display: grid; grid-template-columns: 1fr 1fr; gap: 9%; align-items: center; }
@@ -65,11 +65,11 @@
     .quote blockquote { max-width: 800px; margin: 20px auto; font: italic 32px/1.4 Georgia, serif; }
     .contact { display: grid; grid-template-columns: .9fr 1.1fr; gap: 10%; }
     .contact-details { color: var(--muted); line-height: 2; font-size: 14px; }
+    .contact-details a { color: var(--gold); text-decoration: underline; }
     form { display: grid; gap: 15px; }
-    input, textarea { width: 100%; border: 0; border-bottom: 1px solid #c9c3b8; background: transparent; padding: 15px 4px; font: 14px Arial; outline: none; }
+    input, textarea { width: 100%; border: 0; border-bottom: 1px solid #c9c3b8; background: transparent; padding: 15px 4px; font: 14px Arial, sans-serif; outline: none; color: var(--ink); }
     input:focus, textarea:focus { border-color: var(--gold); }
     textarea { min-height: 120px; resize: vertical; }
-    button { border: 0; cursor: pointer; width: fit-content; }
     footer { background: #20251f; color: #c7c9c2; padding: 35px 8%; display: flex; justify-content: space-between; gap: 20px; font-size: 11px; letter-spacing: 1px; }
     footer strong { color: white; font-family: Georgia, serif; letter-spacing: 2px; font-size: 16px; }
     @media (max-width: 800px) {
@@ -133,15 +133,18 @@
       </div>
       <div class="service-grid">
         <article class="service">
-          <div class="num">01</div><h3>Training & opleiding</h3>
+          <div class="num">01</div>
+          <h3>Training & opleiding</h3>
           <p>Gerichte dressuurtraining afgestemd op het niveau, de aanleg en het tempo van jouw paard.</p>
         </article>
         <article class="service">
-          <div class="num">02</div><h3>Jonge paarden</h3>
+          <div class="num">02</div>
+          <h3>Jonge paarden</h3>
           <p>Een rustige en doordachte basisopleiding waarin vertrouwen en een correcte ontwikkeling vooropstaan.</p>
         </article>
         <article class="service">
-          <div class="num">03</div><h3>Verkoop & begeleiding</h3>
+          <div class="num">03</div>
+          <h3>Verkoop & begeleiding</h3>
           <p>Op zoek naar een passend dressuurpaard? We denken graag mee over een combinatie die echt bij je past.</p>
         </article>
       </div>
@@ -156,15 +159,27 @@
       <div class="horse-grid">
         <article class="horse-card">
           <div class="horse-image" role="img" aria-label="Dressuurpaard"></div>
-          <div class="horse-info"><h3>Paard in de kijker</h3><p>Leeftijd, afstamming, niveau en verdere informatie op aanvraag.</p><a href="#contact">Meer informatie →</a></div>
+          <div class="horse-info">
+            <h3>Paard in de kijker</h3>
+            <p>Leeftijd, afstamming, niveau en verdere informatie op aanvraag.</p>
+            <a href="paard-valerno.html">Meer informatie →</a>
+          </div>
         </article>
         <article class="horse-card">
           <div class="horse-image" role="img" aria-label="Dressuurpaard in training"></div>
-          <div class="horse-info"><h3>Nieuw aanbod</h3><p>Benieuwd naar de beschikbare paarden en hun mogelijkheden?</p><a href="#contact">Meer informatie →</a></div>
+          <div class="horse-info">
+            <h3>Nieuw aanbod</h3>
+            <p>Benieuwd naar de beschikbare paarden en hun mogelijkheden?</p>
+            <a href="#contact">Meer informatie →</a>
+          </div>
         </article>
         <article class="horse-card">
           <div class="horse-image" role="img" aria-label="Paard onder het zadel"></div>
-          <div class="horse-info"><h3>Op zoek naar jouw match?</h3><p>Vertel ons wat je zoekt. We bekijken graag welke combinatie past.</p><a href="#contact">Stel je vraag →</a></div>
+          <div class="horse-info">
+            <h3>Op zoek naar jouw match?</h3>
+            <p>Vertel ons wat je zoekt. We bekijken graag welke combinatie past.</p>
+            <a href="#contact">Stel je vraag →</a>
+          </div>
         </article>
       </div>
       <p class="note">De paarden hierboven zijn voorbeeldvakken. Vervang ze door foto's en gegevens van je eigen aanbod.</p>
@@ -183,29 +198,25 @@
         <p class="copy">Neem gerust contact op voor meer informatie, een kennismaking of een bezoek. We helpen je graag verder.</p>
         <div class="contact-details">
           <p><strong>Lemmens Horses</strong><br>België</p>
-          <p>E-mail: <a href="mailto:info@lemmenshorses.trade">info@lemmenshorses.trade</a><br>Telefoon: +32485661657 </p>
-          <p>Volg ons op <a href="https://www.instagram.com/alina.lemmens/">Instagram en Facebook<a href="https://wa.me/32485661657"> Whatsapp</a> </p>
+          <p>E-mail: <a href="mailto:info@lemmenshorses.trade">info@lemmenshorses.trade</a><br>Telefoon: <a href="tel:+32485661657">+32 485 66 16 57</a></p>
+          <p>Social media & direct contact:<br>
+            <a href="https://www.instagram.com/alina.lemmens/" target="_blank" rel="noopener">Instagram</a> | 
+            <a href="https://wa.me/32485661657" target="_blank" rel="noopener">WhatsApp</a>
+          </p>
         </div>
       </div>
       <form action="https://formsubmit.co/info@lemmenshorses.trade" method="POST">
-  <input type="text" name="naam" placeholder="Je naam" required>
+        <input type="text" name="naam" placeholder="Je naam" required>
+        <input type="email" name="email" placeholder="Je e-mailadres" required>
+        <input type="text" name="onderwerp" placeholder="Onderwerp">
+        <textarea name="bericht" placeholder="Je bericht..." required></textarea>
+        
+        <!-- FormSubmit instellingen -->
+        <input type="hidden" name="_subject" value="Nieuw contactbericht - Lemmens Horses">
+        <input type="hidden" name="_captcha" value="true">
 
-  <input type="email" name="email" placeholder="Je e-mailadres" required>
-
-  <input type="text" name="onderwerp" placeholder="Onderwerp">
-
-  <textarea name="bericht" placeholder="Je bericht..." required></textarea>
-
-  <input type="hidden" name="_subject" value="Nieuw contactbericht - Lemmens Horses">
-
-  <input type="hidden" name="_captcha" value="true">
-
-  <button class="button" type="submit">Verstuur bericht</button>
-
-  <small style="color:#6e716a;line-height:1.6">
-    Bedankt voor je bericht. We nemen zo snel mogelijk contact op.
-  </small>
-</form>
+        <button class="button" type="submit">Verstuur bericht</button>
+      </form>
     </section>
   </main>
 
@@ -214,15 +225,10 @@
     <span>Dressuur • Training • Verkoop</span>
     <span>© <span id="year"></span> Lemmens Horses. Alle rechten voorbehouden.</span>
   </footer>
+
   <script>
+    // Automatisch het juiste jaartal in de footer plaatsen
     document.getElementById('year').textContent = new Date().getFullYear();
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const data = new FormData(this);
-      const subject = encodeURIComponent(data.get('onderwerp') || 'Contact via Lemmens Horses');
-      const body = encodeURIComponent('Naam: ' + data.get('naam') + '\nE-mail: ' + data.get('email') + '\n\n' + data.get('bericht'));
-      window.location.href = 'mailto:info@lemmenshorses.trade?subject=' + subject + '&body=' + body;
-    });
   </script>
 </body>
 </html>
