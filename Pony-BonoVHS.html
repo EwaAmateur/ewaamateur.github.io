@@ -29,7 +29,6 @@
     nav a:hover { color: var(--gold); }
     .nav-cta { border: 1px solid var(--gold); padding: 13px 18px; }
 
-    /* Mobiele menuknop (verborgen op desktop) */
     .menu-toggle { display: none; background: none; border: none; font-size: 26px; color: var(--ink); cursor: pointer; padding: 5px; }
 
     /* Layout Main */
@@ -38,17 +37,34 @@
     
     .horse-layout { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); gap: 50px; align-items: start; }
 
-    /* Slider / Fotogalerij */
-    .slider-container { position: relative; background: #242923; overflow: hidden; border-radius: 4px; touch-action: pan-y; }
-    .slide { display: none; height: 450px; background-size: cover; background-position: center; }
+    /* Slider / Media Galerij (Foto's + Video's) */
+    .slider-container { position: relative; background: #141713; overflow: hidden; border-radius: 4px; touch-action: pan-y; }
+    .slide { display: none; height: 450px; background-size: cover; background-position: center; position: relative; }
     .slide.active { display: block; }
-    .slider-btns { display: flex; justify-content: space-between; position: absolute; top: 50%; width: 100%; transform: translateY(-50%); padding: 0 12px; pointer-events: none; }
-    .slider-btn { pointer-events: auto; background: rgba(0,0,0,0.55); color: white; border: none; width: 42px; height: 42px; border-radius: 50%; cursor: pointer; font-size: 16px; display: flex; align-items: center; justify-content: center; transition: background .2s; }
+    
+    /* YouTube video in slide */
+    .slide iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+    .slider-btns { display: flex; justify-content: space-between; position: absolute; top: 50%; width: 100%; transform: translateY(-50%); padding: 0 12px; pointer-events: none; z-index: 5; }
+    .slider-btn { pointer-events: auto; background: rgba(0,0,0,0.6); color: white; border: none; width: 42px; height: 42px; border-radius: 50%; cursor: pointer; font-size: 16px; display: flex; align-items: center; justify-content: center; transition: background .2s; }
     .slider-btn:hover { background: var(--gold); }
     
     .thumbnails { display: flex; gap: 10px; margin-top: 12px; overflow-x: auto; padding-bottom: 4px; }
-    .thumb { flex: 0 0 80px; height: 60px; background-size: cover; background-position: center; cursor: pointer; opacity: 0.6; transition: opacity .2s; border: 2px solid transparent; border-radius: 2px; }
+    .thumb { flex: 0 0 80px; height: 60px; background-size: cover; background-position: center; cursor: pointer; opacity: 0.65; transition: opacity .2s; border: 2px solid transparent; border-radius: 2px; position: relative; }
     .thumb.active, .thumb:hover { opacity: 1; border-color: var(--gold); }
+
+    /* Play-icoontje op video-miniaturen */
+    .thumb.video-thumb::after {
+      content: '▶';
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.35);
+      color: white;
+      font-size: 16px;
+    }
 
     /* Info & Details */
     .kicker { color: var(--gold); text-transform: uppercase; letter-spacing: 3px; font-size: 10px; font-weight: bold; }
@@ -62,20 +78,14 @@
     .specs-table th { color: var(--muted); font-weight: normal; width: 38%; }
     .specs-table td { font-weight: bold; color: var(--ink); }
 
-    /* Video sectie */
-    .video-section { margin-top: 50px; background: #242923; color: white; padding: 50px 7%; }
-    .video-section h2 { font-family: Georgia, serif; font-weight: 400; margin: 10px 0; font-size: clamp(24px, 4vw, 32px); }
-    .video-container { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; margin-top: 25px; border-radius: 4px; overflow: hidden; }
-    .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
-
     .button { display: inline-block; padding: 16px 25px; background: var(--sand); color: #24251f; text-transform: uppercase; letter-spacing: 1.8px; font-size: 11px; font-weight: bold; transition: .2s; border: 0; cursor: pointer; text-align: center; }
     .button:hover { background: var(--ink); color: white; transform: translateY(-2px); }
 
     /* Footer */
-    footer { background: #20251f; color: #c7c9c2; padding: 35px 7%; display: flex; justify-content: space-between; align-items: center; gap: 15px; font-size: 11px; letter-spacing: 1px; }
+    footer { background: #20251f; color: #c7c9c2; padding: 35px 7%; display: flex; justify-content: space-between; align-items: center; gap: 15px; font-size: 11px; letter-spacing: 1px; margin-top: 40px; }
     footer strong { color: white; font-family: Georgia, serif; letter-spacing: 2px; font-size: 16px; }
 
-    /* --- MOBIELE WEERGAVE (Smartphones & kleine tablets) --- */
+    /* --- MOBIELE WEERGAVE --- */
     @media (max-width: 850px) {
       .topbar { padding: 0 5%; height: 70px; }
       .brand { font-size: 19px; letter-spacing: 1.5px; }
@@ -108,7 +118,6 @@
       .specs-table th, .specs-table td { padding: 10px 12px; font-size: 13px; }
       .button { display: block; width: 100%; padding: 18px 20px; }
 
-      .video-section { padding: 40px 5%; margin-top: 35px; }
       footer { flex-direction: column; text-align: center; padding: 30px 5%; }
     }
   </style>
@@ -130,16 +139,26 @@
     <a href="index.html#paarden" class="back-link">← Terug naar overzicht</a>
     
     <div class="horse-layout">
-      <!-- Linkerkolom: Fotoslider -->
+      <!-- Linkerkolom: Fotoslider & Video's -->
       <div>
         <div class="slider-container" id="slider">
+          <!-- Slide 1: Foto -->
           <div class="slide active" style="background-image: url('https://i.postimg.cc/MK5c9830/IMG-4506.jpeg?auto=format&fit=crop&w=1200&q=85');"></div>
+          
+          <!-- Slide 2: Foto -->
           <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?auto=format&fit=crop&w=1200&q=85');"></div>
+          
+          <!-- Slide 3: Foto -->
           <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1534307671276-a6a3a5b5f2f5?auto=format&fit=crop&w=1200&q=85');"></div>
+
+          <!-- Slide 4: YouTube Video (Let op ?enablejsapi=1 aan het einde van de link) -->
+          <div class="slide">
+            <iframe class="yt-video" src="https://www.youtube.com/embed/qBAfXTDJO9A?enablejsapi=1" title="Trainingsvideo Bono VHS" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
           
           <div class="slider-btns">
-            <button class="slider-btn" aria-label="Vorige foto" onclick="changeSlide(-1)">❮</button>
-            <button class="slider-btn" aria-label="Volgende foto" onclick="changeSlide(1)">❯</button>
+            <button class="slider-btn" aria-label="Vorige" onclick="changeSlide(-1)">❮</button>
+            <button class="slider-btn" aria-label="Volgende" onclick="changeSlide(1)">❯</button>
           </div>
         </div>
         
@@ -148,6 +167,8 @@
           <div class="thumb active" style="background-image: url('https://i.postimg.cc/MK5c9830/IMG-4506.jpeg?auto=format&fit=crop&w=300&q=85');" onclick="currentSlide(0)"></div>
           <div class="thumb" style="background-image: url('https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?auto=format&fit=crop&w=300&q=85');" onclick="currentSlide(1)"></div>
           <div class="thumb" style="background-image: url('https://images.unsplash.com/photo-1534307671276-a6a3a5b5f2f5?auto=format&fit=crop&w=300&q=85');" onclick="currentSlide(2)"></div>
+          <!-- Video miniatuur met automatisch YouTube-plaatje -->
+          <div class="thumb video-thumb" style="background-image: url('https://img.youtube.com/vi/qBAfXTDJO9A/hqdefault.jpg');" onclick="currentSlide(3)"></div>
         </div>
       </div>
 
@@ -172,18 +193,6 @@
     </div>
   </main>
 
-  <!-- Videosectie -->
-  <section class="video-section">
-    <div style="max-width: 1200px; margin: 0 auto;">
-      <div class="kicker" style="color: var(--sand);">Bewegende beelden</div>
-      <h2>Bekijk de video</h2>
-      <p style="color: #c4c8c0; font-size: 14px;">Bekijk hieronder de trainingsvideo van Bono onder het zadel.</p>
-      <div class="video-container">
-        <iframe id="video" src="https://www.youtube.com/embed/qBAfXTDJO9A?si=wgvbF-J_H0f-jw1j" allowfullscreen></iframe>
-      </div>
-    </div>
-  </section>
-
   <footer>
     <strong>LEMMENS HORSES</strong>
     <span>Dressuur • Training • Verkoop</span>
@@ -199,7 +208,7 @@
       document.getElementById('mainNav').classList.toggle('open');
     }
 
-    // Fotoslider logica
+    // Slider logica (Foto's + Video's)
     let slideIndex = 0;
     showSlides(slideIndex);
 
@@ -211,12 +220,22 @@
       showSlides(slideIndex = n);
     }
 
+    function stopAllVideos() {
+      const videos = document.querySelectorAll('.yt-video');
+      videos.forEach(video => {
+        video.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+      });
+    }
+
     function showSlides(n) {
       let slides = document.getElementsByClassName("slide");
       let thumbs = document.getElementsByClassName("thumb");
       if (n >= slides.length) { slideIndex = 0 }
       if (n < 0) { slideIndex = slides.length - 1 }
       
+      // Pauzeer eventueel spelende video's bij wisselen van slide
+      stopAllVideos();
+
       for (let i = 0; i < slides.length; i++) {
         slides[i].classList.remove("active");
         thumbs[i].classList.remove("active");
